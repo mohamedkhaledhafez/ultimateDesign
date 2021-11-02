@@ -1044,6 +1044,87 @@ a {
 }
 /*============================= End Services =============================*/
 
+/*============================= Start Skills =============================*/
+.our-skills {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.our-skills .container {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .our-skills img {
+    display: none;
+  }
+}
+
+.our-skills .skills {
+  flex: 1;
+}
+
+.our-skills .skills .skill {
+  margin-bottom: 40px;
+}
+
+.our-skills .skills .skill h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+  .our-skills .skill {
+    margin-bottom: 20px;
+  }
+}
+
+.our-skills .skill .the-progress {
+  height: 30px;
+  position: relative;
+  background-color: #eee;
+}
+
+.our-skills .skill .the-progress span {
+  position: relative;
+  display: block;
+  height: 100%;
+  background-color: var(--main-color);
+}
+
+.our-skills .skill .the-progress span::before {
+  content: attr(data-progress);
+  position: absolute;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 3px 5px;
+  top: -38px;
+  right: -18px;
+  padding: 4px 0px;
+  width: 40px;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.our-skills .skill .the-progress span::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 8px;
+  border-color: var(--main-color) transparent transparent transparent;
+  top: -13px;
+  right: -7px;
+}
+/*============================= End Skills =============================*/
+
 /*============================= Start Animation=============================*/
 @keyframes up-and-down {
   0%,
