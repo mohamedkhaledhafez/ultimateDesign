@@ -1654,6 +1654,102 @@ a {
 }
 /*============================= End Videos =============================*/
 
+/*============================= Start Stats =============================*/
+.stats {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+  background-image: url("../images/stats.jpg");
+  background-size: cover;
+  min-height: 300px;
+}
+
+.stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255 255 255 / 95%);
+}
+
+.stats h2 {
+  font-weight: bold;
+  font-size: 40px;
+  width: fit-content;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+.stats .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stats .box {
+  background-color: #fff;
+  padding: 30px 15px;
+  text-align: center;
+  position: relative;
+  opacity: 0.8;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+.stats .box::before,
+.stats .box::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: var(--main-color);
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.stats .box:hover::before {
+  top: 0;
+  right: 0;
+}
+
+.stats .box::after {
+  left: 0;
+  bottom: 0;
+}
+
+.stats .box:hover {
+  opacity: 1;
+}
+
+.stats .box:hover::before,
+.stats .box:hover::after {
+  height: 100%;
+}
+
+.stats .box .number {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.stats .box .text {
+  font-style: italic;
+  color: #000;
+  font-weight: bold;
+  font-style: 20px;
+}
+/*============================= End Stats =============================*/
+
 /*============================= Start Animation=============================*/
 @keyframes up-and-down {
   0%,
