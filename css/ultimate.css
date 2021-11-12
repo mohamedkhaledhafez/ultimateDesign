@@ -63,6 +63,7 @@ a {
   }
 }
 /* Start Components */
+/*Start Main Title Component*/
 .main-title {
   margin: 0 auto 80px;
   padding: 10px 20px;
@@ -124,6 +125,46 @@ a {
   transition-delay: 0.5s;
   cursor: pointer;
 }
+/*End Main Title Component*/
+
+/*Start Spikes Component*/
+.spikes {
+  position: relative;
+}
+
+.spikes::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(135deg, #fff 25%, transparent 25%),
+    linear-gradient(225deg, #fff 25%, transparent 25%);
+  z-index: 1;
+  background-size: 30px 30px;
+}
+/*End Spikes Component*/
+
+/*Start Dots Component*/
+.dots {
+  background-image: url("../images/dots.png");
+  height: 186px;
+  width: 204px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.dots-up {
+  top: 200px;
+  right: 0;
+}
+
+.dots-down {
+  bottom: 200px;
+  left: 0;
+}
+/*End Dots Component*/
+
 /* End Components */
 
 /*============================= Start Global Rules =============================*/
@@ -885,9 +926,9 @@ a {
   align-items: center;
 }
 
-.team .box .data .social a:hover i {
+/* .team .box .data .social a:hover i {
   color: var(--main-color);
-}
+} */
 
 .team .box .data .social i {
   color: #777;
@@ -896,6 +937,20 @@ a {
   -moz-transition: var(--main-transition);
   -ms-transition: var(--main-transition);
   -o-transition: var(--main-transition);
+}
+
+.team .box .data .social .facebook:hover i {
+  color: #1877f2;
+}
+.team .box .data .social .twitter:hover i {
+  color: #1da1f2;
+}
+.team .box .data .social .youtube:hover i {
+  color: #ff0000;
+}
+
+.team .box .data .social .linkedin:hover i {
+  color: #0077b5;
 }
 
 .team .box:hover img {
@@ -2029,11 +2084,6 @@ a {
   width: 78px;
   border: 3px solid #fff;
   margin: 2px;
-}
-
-@media (max-width: 991px) {
-  .footer .footer-gallery img {
-  }
 }
 
 .footer .copyright {
