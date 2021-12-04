@@ -1145,12 +1145,19 @@ a {
 }
 
 .our-skills .skill .the-progress span {
-  position: relative;
-  display: block;
+  position: absolute;
   height: 100%;
+  left: 0;
+  top: 0;
   background-color: var(--main-color);
+  transition: width 0.3s linear;
+  -webkit-transition: width 0.3s linear;
+  -moz-transition: width 0.3s linear;
+  -ms-transition: width 0.3s linear;
+  -o-transition: width 0.3s linear;
 }
 
+/* 
 .our-skills .skill .the-progress span::before {
   content: attr(data-progress);
   position: absolute;
@@ -1177,7 +1184,7 @@ a {
   border-color: var(--main-color) transparent transparent transparent;
   top: -13px;
   right: -7px;
-}
+} */
 /*============================= End Skills =============================*/
 
 /*============================= Start work-steps =============================*/
