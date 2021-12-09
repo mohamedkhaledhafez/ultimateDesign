@@ -8,6 +8,8 @@ window.onscroll = function () {
   }
 };
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Let CountDown For The Event 
 let countDownDate = new Date("Dec 31, 2021 23:59:59").getTime();
 
@@ -41,6 +43,8 @@ let counter  = setInterval ( () => {
     }
     
 }, 1000) 
+
+/////////////////////////////////////////////////////////////////////////////////
 
 // Increase numbers on scrolling
 
