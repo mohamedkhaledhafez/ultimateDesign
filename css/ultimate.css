@@ -20,6 +20,11 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background-color: var(--main-color);
+  color: white;
+}
+
 body {
   font-family: "Cairo", sans-serif;
 }

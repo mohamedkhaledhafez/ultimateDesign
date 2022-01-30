@@ -1,21 +1,48 @@
-/* 
-let skills = document.querySelector(".our-skills skills");
+// Increase numbers on scrolling
 
-let spans = document.querySelectorAll(".progress span");
+let nums = document.querySelectorAll(".stats .number");
+let stats = document.querySelector(".stats");
+let started = false; // Function not started
 
 window.onscroll = function () {
-  if (window.scrollY >= skills.offsetTop) {
-    spans.forEach((span) => {
-      span.style.width = span.dataset.width;
+  if (window.scrollY >= stats.offsetTop) {
+    if (!started) {
+      nums.forEach((num) => startcount(num));
+    }
+    started = true;
+  }
+};
+
+function startcount(elem) {
+  let goal = elem.dataset.goal;
+
+  let countDown = setInterval(() => {
+    elem.textContent++;
+    if (elem.textContent == goal) {
+      clearInterval(countDown);
+    }
+  }, 1000 / goal);
+}
+
+///////////////////////////////////////////////////////////////////
+let progressSpans = document.querySelectorAll(".skill-progress span");
+let ourSkills = document.querySelector(".our-skills");
+
+window.onscroll = function () {
+  if (window.scrollY > ourSkills.offsetTop + 100) {
+    // this.console.log("skills section reached :)");
+
+    progressSpans.forEach((span) => {
+      span.style.width = span.dataset.progress;
     });
   }
 };
- */
 
+/////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Let CountDown For The Event
-let countDownDate = new Date("Dec 31, 2021 23:59:59").getTime();
+let countDownDate = new Date("Feb 31, 2022 23:59:59").getTime();
 
 // console.log(countDownDate);
 
@@ -50,52 +77,3 @@ let counter = setInterval(() => {
 }, 1000);
 
 /////////////////////////////////////////////////////////////////////////////////
-
-// Increase numbers on scrolling
-
-let nums = document.querySelectorAll(".box .number");
-let stats = document.querySelector(".stats");
-
-let started = false; // Function not started
-
-window.onscroll = function () {
-  if (window.scrollY >= stats.offsetTop) {
-    if (!started) {
-      nums.forEach((num) => startcount(num));
-    }
-    started = true;
-  }
-};
-
-function startcount(elem) {
-  let goalNumber = elem.dataset.goal;
-
-  let countDown = setInterval(() => {
-    elem.textContent++;
-
-    if (elem.textContent == goalNumber) {
-      clearInterval(countDown);
-    }
-  }, 1000 / goalNumber);
-}
-
-///////////////////////////////////////////////////////////////////
-
-let ourSkills = document.querySelector(".our-skills");
-
-window.onscroll = function () {
-  // Skills offset top :
-  let skillsOffsetTop = ourSkills.offsetTop;
-
-  if (window.scrollY > skillsOffsetTop + 100) {
-    // this.console.log("skills section reached :)");
-
-    let allSkills = document.querySelectorAll(
-      ".skill-box .skill-progress span"
-    );
-
-    allSkills.forEach((skill) => {
-      skill.style.width = skill.dataset.progress;
-    });
-  }
-};
